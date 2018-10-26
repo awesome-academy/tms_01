@@ -47,3 +47,12 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore database.yml for private
+config/database.yml
+
+# Ignore TDD
+test/*
