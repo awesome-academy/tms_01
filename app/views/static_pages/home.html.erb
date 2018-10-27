@@ -1,0 +1,23 @@
+<div class="landing-page">
+  <div id="myCarousel" class="carousel slide td-slide-homepage" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag("img-nav-1.jpg", alt: t(".img-nav-1")) %>
+      </div>
+        <div class="item">
+          <%= image_tag("img-nav-2.jpg", alt: t(".img-nav-2")) %>
+        </div>
+      </div>
+      <a class="left carousel-control td-carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control td-carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</div>  
