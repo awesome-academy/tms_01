@@ -1,23 +1,26 @@
-<div class="landing-page">
-  <div id="myCarousel" class="carousel slide td-slide-homepage" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag("img-nav-1.jpg", alt: t(".img-nav-1")) %>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class= "col-12">
+      <div id="slider" class="carousel slide mb-5" data-ride="carousel">
+          <ol class="carousel-indicators">
+              <li class="active" data-target="#slider" data-slide-to="0"></li>
+              <li data-target="#slider" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <%= image_tag("img-nav-1.jpg", class: "w-50 d-block mx-auto img-fluid",alt: t(".img-nav-1")) %>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag("img-nav-2.jpg", class: "w-50 d-block mx-auto img-fluid", alt: t(".img-nav-2")) %>
+              </div>
+          </div>
+          <a href="#slider" class="carousel-control-prev" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a href="#slider" class="carousel-control-next" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+          </a>
       </div>
-        <div class="item">
-          <%= image_tag("img-nav-2.jpg", alt: t(".img-nav-2")) %>
-        </div>
-      </div>
-      <a class="left carousel-control td-carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control td-carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
     </div>
   </div>
-</div>  
+</div>

@@ -1,25 +1,14 @@
-$gray-medium-light: #eaeaea;
-
-body {
-  padding-top: 5px;
-}
-
-/* header */
-
-.btn-header {
-  margin-top: 10px;
-  float: right;
-}
-
-.size-logo{
+.size-logo {
   width: 70px;
 }
 
-/* footer */
+.navbar {
+  box-shadow: 2px 2px 5px #3292a6;
+  opacity: 0.9;
+  background: #fff;
+}
 
-footer {
-  margin-top: 30px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+.navbar .nav-item {
+  font-size: 1.4rem;
+  padding-right: 20px;
 }
