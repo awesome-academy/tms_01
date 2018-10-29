@@ -1,4 +1,15 @@
 en:
   layouts:
-    application:
-      title: "Framgia Traning System"
+    footer:
+      text_footer: "© 2018 By Phong - Huan."
+    header:
+      welcome: "Welcome to Framgia Education"
+      sign_in: "sign in"
+      framgia_logo: "framgia logo"
+  helpers:
+    application_helper:
+      title: "Framgia training system"
+  static_pages:
+    home:
+      img-nav-1: "image nav 1"
+      img-nav-2: "image nav 2"
