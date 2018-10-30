@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       else
         forget user
       end
-      redirect_to show_profile_user_path(user)
+      redirect_to user
     else
       flash.now[:danger] = t "controllers.sessions.invalid_account"
       render :new

@@ -11,4 +11,5 @@ subject:
   title_max_length: 250
   description_max_length: 400
 sessions:
-  check_session: 1
+  check_session: "1"
+user_per_page: 10

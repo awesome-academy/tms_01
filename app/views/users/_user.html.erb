@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 my-2">
+            <div class="card border rounded">
+                <div>
+                    <%= image_tag("avatar.png", class: "img-thumbnail rounded float-left h-100", alt: t(".img_avatar")) %>
+                    <div class="card-body p-0">
+                        <div class="card-text"><p><%= link_to user.name, user %></p></div>
+                        <div class="card-text"><p><%= t ".email", email: user.email %></p></div>
+                        <div class="card-text"><%= t ".address", address: user.address %></p></div>
+                        <div class="card-text"><%= t ".phone_number", phone: user.phone_number %></p></div>
+                        <div class="card-text"><%= t ".role", role: user.role %></p></div>
+                    </div>
+                    <div class="btn-group">
+                        <%= link_to t(".show_user"), user, class: "btn btn-info" %>
+                        <%= link_to t(".edit_user"), edit_user_path(user), class: "btn btn-warning" %>
+                        <%= link_to t(".delete_user"), user, method: :delete, data: { confirm: t(".cf_sure")}, class: "btn btn-danger" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

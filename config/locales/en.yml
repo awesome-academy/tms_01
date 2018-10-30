@@ -3,6 +3,9 @@ en:
     users:
       signup_success: "Create an account successfully"
       user_not_found: "User not found!"
+      update_user: Your profile have been updated successfully!
+      pls_log_in: "Please log in"
+      user_deleted: "User deleted"
     sessions:
       invalid_account: "Invalid email/password combination"
   layouts:
@@ -19,6 +22,12 @@ en:
       link_profile: "Profile"
       link_settings: "Settings"
       link_log_out: "Log out"
+      over_view: "Over view"
+      link_courses: "Courses"
+      link_subjects: "Subjects"
+      link_tasks: "Tasks"
+      link_users: Users
+      show_menu: "Show menu"
   helpers:
     application_helper:
       title: "Framgia training system"
@@ -28,16 +37,13 @@ en:
       img-nav-1: "image nav 1"
       img-nav-2: "image nav 2"
   form:
-    title_signup: "Sign Up"
-    btn_signup: "Create new account"
-    btn_login: "Log in now"
-    img-logo: "image logo"
     full_name: "Full Name"
     email: "Email"
     address: "Address"
     password: "Password"
     confirm_password: "Confirm Password"
     phone_number: "Phone Number"
+    role: "Role"
   error:
     one: "The form contains 1 error"
     other: "The form contains %{count} errors"
@@ -48,9 +54,28 @@ en:
       password: "Password"
       btn_log_in: "Log in now!"
   users:
-    show_profile:
+    show:
       btn_close: "Close"
       btn_edit_profile: "Edit"
       my_profile: "My profile"
-  user:
-    day_join: "Joined: %{time}"
+      day_join: "Joined: %{time}"
+    new:
+      sign_up: "Signup"
+      btn_submit: "Submit"
+      create: "Create new account"
+    edit:
+      title_edit: "Edit"
+      btn_submit: "Save changes"
+      edit_profile: "Update your profile"
+    index:
+      index_title: "Listing User"
+    user:
+      email: "Email: %{email}"
+      address: "Address: %{address}"
+      phone_number: "Phone number: %{phone}"
+      role: "Role: %{role}"
+      show_user: "Show"
+      edit_user: "Edit"
+      delete_user: "Delete"
+      cf_sure: "You sure"
+  format_time: "%B %d, %Y - %H:%M:%S"
