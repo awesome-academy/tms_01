@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render "layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <div class="container-fluid">
+          <%= link_to t(".link_home"), "#", class: "navbar-brand" %>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <%= link_to t(".link_account"),"#", class: "nav-link dropdown-toggle", "data-toggle": "dropdown" %>
+                  <div class="dropdown-menu">
+                    <%= link_to t(".link_profile"), current_user, class: "dropdown-item" %>
+                    <%= link_to t(".link_settings"), "#", class: "dropdown-item" %>
+                    <%= link_to t(".link_log_out"), logout_path, method: :delete, class: "dropdown-item" %>
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -10,3 +10,5 @@ course:
 subject:
   title_max_length: 250
   description_max_length: 400
+sessions:
+  check_session: 1
