@@ -1,4 +1,8 @@
 en:
+  controllers:
+    users:
+      signup_success: "Create an account successfully"
+      user_not_found: "User not found!"
   layouts:
     footer:
       text_footer: "© 2018 By Phong - Huan."
@@ -12,6 +16,20 @@ en:
       title: "Framgia training system"
   static_pages:
     home:
-      framgia: framgia
+      framgia: "framgia"
       img-nav-1: "image nav 1"
       img-nav-2: "image nav 2"
+  form:
+    title_signup: "Sign Up"
+    btn_signup: "Create new account"
+    btn_login: "Log in now"
+    img-logo: "image logo"
+    full_name: "Full Name"
+    email: "Email"
+    address: "Address"
+    password: "Password"
+    confirm_password: "Confirm Password"
+    phone_number: "Phone Number"
+  error:
+    one: "The form contains 1 error"
+    other: "The form contains %{count} errors"
