@@ -1,20 +1,19 @@
 class UsersController < ApplicationController
   layout "application", only: :new
-
-  before_action :load_user, only: :show
+  before_action :load_user, only: :show_profile
 
   def new
     @user = User.new
   end
 
-  def show; end
+  def show_profile; end
 
   def create
     @user = User.new user_params
     if @user.save
       log_in @user
       flash[:success] = t "controllers.users.signup_success"
-      redirect_to @user
+      redirect_to show_profile_user_path(@user)
     else
       render :new
     end
