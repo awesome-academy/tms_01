@@ -47,3 +47,10 @@ en:
       email: "Email"
       password: "Password"
       btn_log_in: "Log in now!"
+  users:
+    show_profile:
+      btn_close: "Close"
+      btn_edit_profile: "Edit"
+      my_profile: "My profile"
+  user:
+    day_join: "Joined: %{time}"
