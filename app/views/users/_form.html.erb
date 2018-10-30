@@ -1,7 +1,4 @@
 <%= form_for @user, class: "form-signin text-center" do |f| %>
-  <div class="text-center">
-    <%= image_tag("logo.png", class: "size-logo", alt: t(".img-logo")) %>
-  </div>
   <h1 class="h3 mb-3 font-weight-normal mt-3 text-center"><%= t "form.title_signup" %></h1>
   <%= render "shared/error_messages", object: f.object %>
   <div>
