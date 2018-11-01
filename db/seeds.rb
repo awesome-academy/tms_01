@@ -19,3 +19,10 @@ User.create!(name:  "Nguyen Huan",
                address: address,
                phone_number: phone_number)
 end
+
+20.times do |n|
+  title = Faker::Lorem.sentence
+  description = Faker::Lorem.paragraph
+  Subject.create!(title: title,
+    description: description)
+end

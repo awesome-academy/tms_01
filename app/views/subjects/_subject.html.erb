@@ -1,0 +1,11 @@
+<div class="col-6">
+  <div class="card-body">
+    <h4 class="card-title"><%= subject.title %></h4>
+    <p class="card-text "><%= subject.description %></p>
+    <div class="btn-group">
+      <%= link_to t(".show_subject"), subject, class: "btn btn-info" %>
+      <%= link_to t(".edit_subject"), edit_subject_path(subject), class: "btn btn-warning" %>
+      <%= link_to t(".delete_subject"), subject, method: :delete, data: { confirm: t(".cf_sure")}, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>
