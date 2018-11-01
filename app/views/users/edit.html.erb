@@ -1,8 +1,8 @@
-<% provide:title, t(".sign_up") %>
+<% provide:title, t(".title_edit") %>
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 class="h3 mb-3 font-weight-normal mt-3 text-center"><%= t ".create" %></h1>
+      <h1 class="h3 mb-3 font-weight-normal mt-3 text-center"><%= t ".edit_profile" %></h1>
       <%= form_for @user, class: "form-signin text-center" do |f| %>
         <%= render "shared/error_messages", object: f.object %>
         <div class="form-group">
@@ -29,10 +29,6 @@
           <%= f.label :phone_number, t(".phone_number") %>
           <%= f.number_field :phone_number, class:"form-control mt-2", placeholder: t("form.phone_number") %>
         </div>
-        <div class="form-group">
-          <%= f.label :role, t(".select_role") %>
-          <%= f.select(:role, User.roles.keys, {prompt: t(".select_role")}, class: "form-control") %>
-        </div>
         <div>
         <%= f.submit t(".btn_submit"), class:"btn btn-primary btn-block mt-3" %>
         </div>
@@ -41,4 +37,3 @@
     </div>
   </div>
 </div>
-

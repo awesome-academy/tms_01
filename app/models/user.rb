@@ -1,11 +1,13 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save{email.downcase!}
-  has_many :user_courses, dependent: :destroy
+  # has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses
-  has_many :user_subjects, dependent: :destroy
+  # has_many :user_subjects, dependent: :destroy
   has_many :subjects, through: :user_subjects
-  has_many :user_tasks, dependent: :destroy
+  # has_many :user_tasks, dependent: :destroy
+
+  scope :latest, ->{order(created_at: :desc)}
 
   validates :name, presence: true,
     length: {maximum: Settings.user.name_max_length}
@@ -25,7 +27,7 @@ class User < ApplicationRecord
   validates :address, presence: true,
     length: {maximum: Settings.user.address_max_length}
 
-  enum role: {trainee: 0, supervisor: 1, admin: 2}
+  enum role: {trainee: 0, supervisor: 1}
 
   def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost
