@@ -13,3 +13,4 @@ subject:
 sessions:
   check_session: "1"
 user_per_page: 10
+subjects_per_page: 10

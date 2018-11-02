@@ -6,6 +6,11 @@ en:
       update_user: Your profile have been updated successfully!
       pls_log_in: "Please log in"
       user_deleted: "User deleted"
+    subjects:
+      subject_deleted: "You have deleted subject successfully!"
+      create_subject_success: "You have create subject successfully!"
+      update_subject: "You have update subject successfully!"
+      subject_not_found: "Subject not found"
     sessions:
       invalid_account: "Invalid email/password combination"
   layouts:
@@ -44,6 +49,8 @@ en:
     confirm_password: "Confirm Password"
     phone_number: "Phone Number"
     role: "Role"
+    title_subject: Title
+    description_subject: Description
   error:
     one: "The form contains 1 error"
     other: "The form contains %{count} errors"
@@ -79,3 +86,23 @@ en:
       delete_user: "Delete"
       cf_sure: "You sure"
   format_time: "%B %d, %Y - %H:%M:%S"
+  subjects:
+    new:
+      btn_submit: "Create subject"
+      title_subject: "Title"
+      description_subject: "Description"
+      create_subject: "Create subject"
+    index:
+      index_title: "All Subject"
+    subject:
+      show_subject: "Show"
+      edit_subject: "Edit"
+      delete_subject: "Delete"
+      cf_sure: "You sure"
+    edit:
+      title: "Title"
+      description: "Description"
+      btn_submit: "Update"
+      title_edit: "Edit subject"
+    show:
+      subject: "Subject"
