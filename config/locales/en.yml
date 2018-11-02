@@ -11,6 +11,11 @@ en:
       create_subject_success: "You have create subject successfully!"
       update_subject: "You have update subject successfully!"
       subject_not_found: "Subject not found"
+    courses:
+      course_deleted: "You have deleted course successfully!"
+      create_course_success: "You have create course successfully!"
+      update_course: "You have update course successfully!"
+      subject_not_found: "Course not found"
     sessions:
       invalid_account: "Invalid email/password combination"
   layouts:
@@ -106,3 +111,14 @@ en:
       title_edit: "Edit subject"
     show:
       subject: "Subject"
+  courses:
+    index:
+      index_course: "Listing Courses"
+    form:
+      submit: "Submit"
+    new:
+      create_course: "Create course"
+    edit:
+      edit_course: "Edit course"
+    course:
+      cf_sure: "You sure?"

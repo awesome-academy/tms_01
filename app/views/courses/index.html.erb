@@ -1,0 +1,13 @@
+<% provide :title, t(".index_course") %>
+<h1 class= "text-center"><%= t ".index_course" %></h1>
+<%= link_to t(".create_course"), new_course_path, class: "btn btn-primary mb-5" %>
+
+<%= will_paginate_helper @courses %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render @courses %>
+  </div>
+</div>
+
+<%= will_paginate_helper @courses %>

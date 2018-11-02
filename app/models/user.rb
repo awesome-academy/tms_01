@@ -1,11 +1,9 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   before_save{email.downcase!}
-  # has_many :user_courses, dependent: :destroy
+  has_many :user_courses, dependent: :destroy
   has_many :courses, through: :user_courses
-  # has_many :user_subjects, dependent: :destroy
   has_many :subjects, through: :user_subjects
-  # has_many :user_tasks, dependent: :destroy
 
   scope :latest, ->{order(created_at: :desc)}
 
