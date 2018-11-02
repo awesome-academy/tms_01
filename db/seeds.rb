@@ -1,4 +1,4 @@
-User.create!(name:  "Nguyen Huan",
+User.create!(name: "Nguyen Huan",
              email: "nguyenhuan1994dn@gmail.com",
              password: "123456",
              password_confirmation: "123456",
@@ -25,4 +25,14 @@ end
   description = Faker::Lorem.paragraph
   Subject.create!(title: title,
     description: description)
+
+    Course.create!(title: "Nguyen Huan",
+              description: "nguyenhuan1994dn@gmail.com",
+              time_traning: 23)
+
+20.times do |n|
+  title = Faker::Lorem.sentence
+  description = Faker::Lorem.paragraph
+  Course.create!(title: title,
+               description: description)
 end

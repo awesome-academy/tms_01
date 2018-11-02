@@ -1,0 +1,20 @@
+ <div class="col-3 my-3">
+        <div class="card w-100">
+          <div class="card-header">
+            <div class="d-flex justify-content-between">
+              <p class="my-auto"><%= t ".course" %></p>
+              <a href="#" class="nav-link dropdown-toggle text-muted" data-toggle="dropdown"><%= t ".settings" %></a>
+              <div class="dropdown-menu">
+                  <%= link_to t(".show_course"), course, class: "dropdown-item" %>
+                  <%= link_to t(".edit_course"), edit_course_path(course), class: "dropdown-item" %>
+                  <%= link_to t(".delete_course"), course, method: :delete, data: { confirm: t(".cf_sure")}, class: "dropdown-item" %>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <div class="Img-10 Img-height Img-new"></div>
+            <h1 class="card-title"><%= course.title %></h1>
+            <p class="card-text"><%= course.description %></p>
+          </div>
+        </div>
+      </div>
