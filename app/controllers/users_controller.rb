@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, :supervisor_user
+  before_action :logged_in_user, :authenticate_supervisor!
   before_action :load_user, except: %i(index new create)
 
   def index

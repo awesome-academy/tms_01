@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     redirect_to login_path
   end
 
-  def supervisor_user
+  def authenticate_supervisor!
     redirect_to(login_path) unless current_user.supervisor?
   end
 end
