@@ -2,6 +2,8 @@ class CoursesController < ApplicationController
   layout "users"
   before_action :logged_in_user, :authenticate_supervisor!
   before_action :load_course, except: %i(index new create)
+  before_action :load_subjects_of_course, :load_trainees,
+    :load_supervisors, only: :show
 
   def index
     @courses = Course.latest.paginate page: params[:page],

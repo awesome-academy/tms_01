@@ -20,16 +20,28 @@ User.create!(name: "Nguyen Huan",
                phone_number: phone_number)
 end
 
-20.times do |n|
+10.times do |n|
   title = Faker::Lorem.sentence
   description = Faker::Lorem.paragraph
   Subject.create!(title: title,
     description: description)
     end
 
-20.times do |n|
+10.times do |n|
   title = Faker::Lorem.sentence
   description = Faker::Lorem.paragraph
   Course.create!(title: title,
                description: description)
+end
+
+course = Course.first
+subjects = Subject.take(5)
+users = User.take(5)
+
+subjects.each do |sub|
+  CourseSubject.create!(course_id: course.id, subject_id: sub.id)
+end
+
+users.each do |user|
+  UserCourse.create!(course_id: course.id, user_id: user.id)
 end
