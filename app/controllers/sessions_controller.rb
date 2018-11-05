@@ -21,10 +21,15 @@ class SessionsController < ApplicationController
       else
         forget user
       end
-      redirect_to user
+      redirect_after_sign_in user
     else
       flash.now[:danger] = t "controllers.sessions.invalid_account"
       render :new
     end
+  end
+
+  def redirect_after_sign_in user
+    url = user.supervisor? ? user : basic_trainee_user_path(user)
+    redirect_to url
   end
 end

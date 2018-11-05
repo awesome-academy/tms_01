@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   resources :users
   resources :courses
   resources :subjects
+
+  namespace :basic_trainee do
+    resources :users
+  end
 end

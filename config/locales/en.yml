@@ -38,6 +38,17 @@ en:
       link_tasks: "Tasks"
       link_users: Users
       show_menu: "Show menu"
+    basic_application:
+      link_home: "Framgia Education"
+      link_profile: "Profile"
+      link_settings: "Settings"
+      link_log_out: "Log out"
+      over_view: "Over view"
+      link_courses: "Courses"
+      link_subjects: "Subjects"
+      link_tasks: "Tasks"
+      link_users: Users
+      show_menu: "Show menu"
   helpers:
     application_helper:
       title: "Framgia training system"
@@ -122,3 +133,8 @@ en:
       edit_course: "Edit course"
     course:
       cf_sure: "You sure?"
+  basic_trainee:
+    users:
+      show:
+        day_join: "Joined: %{time}"
+        

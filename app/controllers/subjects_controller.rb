@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   layout "users"
-  before_action :logged_in_user, :supervisor_user
+  before_action :logged_in_user, :authenticate_supervisor!
   before_action :load_subject, except: %i(index new create)
 
   def index

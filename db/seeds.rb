@@ -10,8 +10,8 @@ User.create!(name: "Nguyen Huan",
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  phone_number = "0123456789"
-  address = "to 45"
+  phone_number = Faker::PhoneNumber.phone_number
+  address = Faker::Address.street_address
   User.create!(name:  name,
                email: email,
                password: password,
@@ -25,10 +25,7 @@ end
   description = Faker::Lorem.paragraph
   Subject.create!(title: title,
     description: description)
-
-    Course.create!(title: "Nguyen Huan",
-              description: "nguyenhuan1994dn@gmail.com",
-              time_traning: 23)
+    end
 
 20.times do |n|
   title = Faker::Lorem.sentence
