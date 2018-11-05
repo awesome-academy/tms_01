@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_151535) do
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "time_traning"
+    t.integer "time_training"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_courses_on_title", unique: true
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_151535) do
   create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "time_traning"
+    t.integer "time_training"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_subjects_on_title", unique: true

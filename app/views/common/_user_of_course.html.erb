@@ -1,0 +1,17 @@
+<div class="card border rounded bg-light">
+  <div>
+    <%= image_tag("avatar.png", class: "img-thumbnail rounded float-left img-height", alt: t(".img_avatar")) %>
+    <div class="card-body p-0">
+      <h1 class="card-title">
+        <%= user.name %>
+      </h1>
+      <p class="card-text">
+        <%= user.email %>
+      </p>
+      <div class="btn-group">
+        <%= link_to t(".show_details"), "#", class: "btn btn-info" %>
+        <%= link_to t(".delete_member"), "#", class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

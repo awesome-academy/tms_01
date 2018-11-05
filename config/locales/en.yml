@@ -133,8 +133,13 @@ en:
       edit_course: "Edit course"
     course:
       cf_sure: "You sure?"
+    show:
+      subject: "Subject"
+      member: "Member"
+      tasks: "Tasks"
+      btn_show_details: "Show details"
+      btn_delete_subject: "Delete subject"
   basic_trainee:
     users:
       show:
         day_join: "Joined: %{time}"
-        
