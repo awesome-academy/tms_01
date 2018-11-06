@@ -7,6 +7,7 @@
           <div class="card-body p-0">
             <h1 class="card-title">
               <%= @course.title %>
+              <input type="hidden" id="course-id" value="<%= @course.id %>">
             </h1>
             <p class="card-text">
               <%= @course.description %>
@@ -64,20 +65,24 @@
           <div class="row">
             <div class="col-6">
               <h3>
-                <%= t ".supervisor" %><span class="badge ml-2 text-primary">
+                <%= t ".supervisor" %><span class="badge ml-2 text-primary supervisor-count">
                   <%= @supervisors.size %></span>
               </h3>
-              <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
+              <div class="supervisors">
+                <%= render partial: "common/user_of_course", collection: @supervisors, as: :user %>
+              </div>
             </div>
             <div class="col-6">
               <h3>
-                <%= t ".trainee" %><span class="badge ml-2 text-primary">
+                <%= t ".trainee" %><span class="badge ml-2 text-primary trainees-count">
                   <%= @trainees.size %></span>
               </h3>
-              <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+              <div class="trainees">
+                <%= render partial: "common/user_of_course", collection: @trainees, as: :user %>
+              </div>
             </div>
           </div>
-          
+          <%= link_to t("btn.btn_add_member"), member_remaining_course_path(@course), method: :get, class: "btn btn-info", data: {toggle: "modal", target: "#modal-id"}, remote: true %>
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
@@ -85,4 +90,6 @@
       </div>
     </div>
   </div>
+</div>
+<div class="modal fade" id="modal-id">
 </div>

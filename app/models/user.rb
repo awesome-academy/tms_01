@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :subjects, through: :user_subjects
 
   scope :latest, ->{order(created_at: :desc)}
+  scope :not_in_course, (lambda do |course_id|
+    where("id not in (?)", UserCourse.user_id_on_course(course_id))
+  end)
 
   validates :name, presence: true,
     length: {maximum: Settings.user.name_max_length}
