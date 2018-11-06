@@ -143,3 +143,8 @@ en:
     users:
       show:
         day_join: "Joined: %{time}"
+  alert:
+    pls_choose_member: "Please choose member!"
+    course_not_found: "Course not found"
+    user_not_found: "User not found"
+    add_member_success: "User have been added"

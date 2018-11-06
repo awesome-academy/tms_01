@@ -7,9 +7,15 @@ class UserCourse < ApplicationRecord
 
   enum status: {unstart: 0, inprogress: 1, finish: 2}
 
-  scope :user_of_course_by_role, ->(course_id, role) do
+  scope :user_of_course_by_role, (lambda do |course_id, role|
     joins(:user, :course)
       .select("users.*")
       .where("course_id = ?", course_id).merge(role)
-  end
+  end)
+
+  scope :user_id_on_course, (lambda do |course_id|
+    joins(:user)
+      .select("users.id")
+      .where(course_id: course_id)
+  end)
 end
