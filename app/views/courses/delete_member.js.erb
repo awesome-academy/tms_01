@@ -1,0 +1,6 @@
+alert(I18n.t("alert.deleted_user_success"));
+$('.user-<%= @user_id %>').remove();
+$('.supervisor-count').html('<%= @supervisors.size %>');
+$('.trainees-count').html('<%= @trainees.size %>');
+$('.supervisors').html('<%= j render(partial: "common/user_of_course", collection: @supervisors, as: :user) %>');
+$('.trainees').html('<%= j render(partial: "common/user_of_course", collection: @trainees, as: :user) %>');
