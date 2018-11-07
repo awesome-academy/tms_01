@@ -19,6 +19,9 @@ en:
       user_not_found: "User not found"
     sessions:
       invalid_account: "Invalid email/password combination"
+    tasks:
+      create_task_success: "Task have been created successfully"
+      subject_not_found: "Subject not found"
   layouts:
     footer:
       text_footer: "© 2018 By Phong - Huan."
@@ -121,8 +124,18 @@ en:
       description: "Description"
       btn_submit: "Update"
       title_edit: "Edit subject"
+      description: "Description"
     show:
       subject: "Subject"
+      tasks: "Tasks"
+      add_task: "Add task"
+      task: "Task"
+  tasks:
+    form:
+      submit: "Submit"
+      btn_close: "Close"
+      title: "Title"
+      description: "Description"
   courses:
     index:
       index_course: "Listing Courses"
@@ -172,3 +185,4 @@ en:
     pls_choose_subject: "Please choose subject"
     subject_not_found: "Subject not found"
     add_subject_success: "Add subject successfully"
+    add_task_success: "Add task successfully"

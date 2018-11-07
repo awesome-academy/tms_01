@@ -1,0 +1,3 @@
+alert(I18n.t("alert.add_task_success"));
+$('.list_task').html('<%= j render(partial: "tasks/task", collection: @tasks) %>');
+$('#modal-task').modal('toggle');

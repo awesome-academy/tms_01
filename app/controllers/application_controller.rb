@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
     @supervisors = UserCourse.user_of_course_by_role @course.id,
       User.supervisor
   end
+
+  def load_tasks
+    @tasks = @subject.tasks.latest
+  end
 end
