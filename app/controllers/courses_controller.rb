@@ -1,8 +1,9 @@
 class CoursesController < ApplicationController
   layout "users"
   before_action :logged_in_user, :authenticate_supervisor!
-  before_action :load_course, except: %i(index new create add_member)
-  before_action :load_course_to_add, only: :add_member
+  before_action :load_course,
+    except: %i(index new create add_member add_subject)
+  before_action :load_course_to_add, only: %i(add_member add_subject)
   before_action :load_subjects_of_course, :load_trainees,
     :load_supervisors, only: :show
 
@@ -67,6 +68,36 @@ class CoursesController < ApplicationController
         format.json{render json: {status: 403}}
       end
     end
+    respond_to :js
+  end
+
+  def subject_remaining
+    @subjects = Subject.not_in_course @course.id
+    respond_to :js
+  end
+
+  def add_subject
+    subjects_id = params[:subjectsId]
+    begin
+      CourseSubject.transaction do
+        subjects_id.each do |subject_id|
+          CourseSubject.create!(course_id: @course.id,
+            subject_id: subject_id.to_i)
+        end
+      end
+      load_subjects_of_course
+    rescue StandardError
+      respond_to do |format|
+        format.json do
+          render json: {status: 403,
+                        message: t("alert.subject_not_found")}
+        end
+        format.json do
+          render json: {status: 404,
+                        message: t("alert.course_not_found")}
+        end
+      end
+    end
 
     respond_to :js
   end
@@ -88,6 +119,7 @@ class CoursesController < ApplicationController
     @course_subject = CourseSubject.find_by course_id: @course.id,
       subject_id: params[:subject_id]
     if @course_subject&.destroy
+      load_subjects_of_course
       respond_to :js
     else
       flash[:danger] = t "controllers.courses.del_subject_failed"
@@ -112,7 +144,10 @@ class CoursesController < ApplicationController
     @course = Course.find_by id: params[:courseId]
     return if @course.present?
     respond_to do |format|
-      format.json{render json: {status: 404}}
+      format.json do
+        render json: {status: 404,
+                      message: t("alert.course_not_found")}
+      end
     end
   end
 end

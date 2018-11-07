@@ -18,3 +18,11 @@
   background-size: cover;
   background-position: center;
 }
+.modal-dialog {
+  overflow-y: initial !important
+}
+
+.modal-body {
+  height: 600px;
+  overflow-y: auto;
+}

@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function () {
     var usersChecked = [];
     checkBoxs.each(function (index, el) {
       if (el.checked) {
-        var idUser = $(el).parent().parent().find('input[type="hidden"]').val();
+        var idUser = $(this).val();
         usersChecked.push(idUser);
       }
     });
@@ -29,6 +29,35 @@ $(document).on('turbolinks:load', function () {
           }
         }
       });
+    }
+  });
+
+  $('body').on('click', '.add-subject', function (event) {
+    var listSubject = $('.subject-remaining');
+    var subjectsChecked = [];
+    var courseId = $('#course-id').val();
+    listSubject.each(function (index, el) {
+      if (el.checked) {
+        var idSubject = $(this).val();
+        subjectsChecked.push(idSubject);
+      }
+    });
+    if (subjectsChecked.length == 0) {
+      alert(I18n.t("alert.pls_choose_subject"));
+    } else {
+      $.ajax({
+        url: '/courses/add_subject',
+        type: 'GET',
+        data: {
+          subjectsId: subjectsChecked,
+          courseId: courseId
+        },
+        success: function (data) {
+          if (data.message != undefined) {
+            alert(data.message);
+          }
+        }
+      })
     }
   });
 });

@@ -9,4 +9,7 @@ class Subject < ApplicationRecord
     length: {maximum: Settings.subject.description_max_length}
 
   scope :latest, ->{order created_at: :desc}
+  scope :not_in_course, (lambda do |course_id|
+    where("id not in (?)", CourseSubject.subject_id_on_course(course_id))
+  end)
 end

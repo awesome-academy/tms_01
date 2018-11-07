@@ -1,18 +1,19 @@
 <div class="modal-dialog">
   <div class="modal-content">
+
     <div class="modal-header bg-secondary">
-      <h4 class="modal-title"><%= t ".member" %></h4>
+      <h4 class="modal-title"><%= t ".subject" %></h4>
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     </div>
 
     <div class="modal-body bg-light">
-      <%= render partial: "common/user_not_in_course", collection: remain_users, as: :user %>
+      <%= render partial: "common/subject_not_in_course", collection: subject_remaining, as: :subject %>
     </div>
-
-    <div class="modal-footer bg-dark">
+    
+    <div class="modal-footer">
       <button type="button" class="btn btn-default" data-dismiss="modal"><%= t ".btn_close" %></button>
-      <button type="button" class="btn btn-primary add-member"><%= t ".btn_add_member" %></button>
+      <button type="button" class="btn btn-primary add-subject"><%= t ".btn_add_subject" %></button>
     </div>
-
+    
   </div>
 </div>
