@@ -1,6 +1,7 @@
 class UserCourse < ApplicationRecord
   belongs_to :user
   belongs_to :course
+  delegate :title, to: :course, prefix: true
 
   validates :user_id, presence: true
   validates :course_id, presence: true

@@ -3,6 +3,7 @@ class SubjectsController < ApplicationController
   before_action :logged_in_user, :authenticate_supervisor!
   before_action :load_subject, except: %i(index new create)
   before_action :load_tasks, only: :show
+
   def index
     @subjects = Subject.latest.paginate page: params[:page],
       per_page: Settings.subjects_per_page

@@ -1,0 +1,10 @@
+<div class="col-md-3">
+  <div class="product-item">
+    <div class="pi-img-wrapper">
+      <%= image_tag "course.png", class: "", alt: user_course.course_title %>
+    </div>
+    <h3><%= link_to user_course.course_title, basic_trainee_course_path(user_course.course) %></h3>
+    <div class="text-uppercase text-success font-weight-bold"><%= user_course.status %></div>
+  </div>
+</div>
+

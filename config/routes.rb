@@ -26,5 +26,6 @@ Rails.application.routes.draw do
 
   namespace :basic_trainee do
     resources :users
+    resources :courses, only: %i(index show)
   end
 end
