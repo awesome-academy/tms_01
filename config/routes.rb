@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :courses do
     collection do
       get :add_member
+      delete :delete_member
+      delete :delete_subject
     end
     member do
       get :member_remaining

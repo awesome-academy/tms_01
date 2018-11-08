@@ -71,6 +71,30 @@ class CoursesController < ApplicationController
     respond_to :js
   end
 
+  def delete_member
+    @user_course = UserCourse.find_by course_id: @course.id,
+      user_id: params[:user_id]
+    if @user_course&.destroy
+      load_supervisors
+      load_trainees
+      respond_to :js
+    else
+      flash[:danger] = t "controllers.courses.del_subject_failed"
+      redirect_to course_path(@course)
+    end
+  end
+
+  def delete_subject
+    @course_subject = CourseSubject.find_by course_id: @course.id,
+      subject_id: params[:subject_id]
+    if @course_subject&.destroy
+      respond_to :js
+    else
+      flash[:danger] = t "controllers.courses.del_subject_failed"
+      redirect_to course_path(@course)
+    end
+  end
+
   private
 
   def course_params

@@ -16,6 +16,7 @@ en:
       create_course_success: "You have create course successfully!"
       update_course: "You have update course successfully!"
       subject_not_found: "Course not found"
+      user_not_found: "User not found"
     sessions:
       invalid_account: "Invalid email/password combination"
   layouts:
@@ -148,3 +149,5 @@ en:
     course_not_found: "Course not found"
     user_not_found: "User not found"
     add_member_success: "User have been added"
+    deleted_subject_success: "Subject have been deleted"
+    deleted_user_success: "User have been deleted"
