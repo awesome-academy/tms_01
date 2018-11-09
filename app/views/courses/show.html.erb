@@ -42,6 +42,7 @@
           <div class="subjects">
             <%= render partial: "common/subject_of_course", collection: @subjects, as: :subject %>
           </div>
+           <%= link_to t(".btn_add_subject"), subject_remaining_course_path(@course), method: :get, class: "btn btn-info", data: {toggle: "modal", target: "#modal-subject"}, remote: true %>
         </div>
 
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -66,7 +67,7 @@
               </div>
             </div>
           </div>
-          <%= link_to t("btn.btn_add_member"), member_remaining_course_path(@course), method: :get, class: "btn btn-info", data: {toggle: "modal", target: "#modal-id"}, remote: true %>
+          <%= link_to t(".btn_add_member"), member_remaining_course_path(@course), method: :get, class: "btn btn-info", data: {toggle: "modal", target: "#modal-id"}, remote: true %>
         </div>
 
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
@@ -76,4 +77,6 @@
   </div>
 </div>
 <div class="modal fade" id="modal-id">
+</div>
+<div class="modal fade" id="modal-subject">
 </div>

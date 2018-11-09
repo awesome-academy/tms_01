@@ -1,3 +1,3 @@
-alert(I18n.t("alert.deleted_subject_success"));
-$('.subject-<%= @subject_id %>').remove();
+alert( I18n.t("alert.add_subject_success"));
+$('#modal-subject').modal('toggle');
 $('.subjects').html('<%= j render(partial: "common/subject_of_course", collection: @subjects, as: :subject) %>');
