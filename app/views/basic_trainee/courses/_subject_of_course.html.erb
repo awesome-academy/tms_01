@@ -6,7 +6,7 @@
         <%= subject.title %>
       </h1>
       <p class="card-text">
-        <%= subject.description %>
+        <%= truncate(subject.description, length: Settings.limit_description) %>
       </p>
       <div class="btn-group">
         <%= link_to t(".show_details"), "#", class: "btn btn-info" %>

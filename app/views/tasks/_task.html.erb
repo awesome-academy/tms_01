@@ -5,7 +5,7 @@
       </div>
       <div class="media-body">
         <h4 class="media-heading"><%= task.title %></h4>
-        <p><%= task.description %></p>
+        <p><%= truncate(task.description, length: Settings.limit_description) %></p>
       </div>
       <hr>
     </div>
