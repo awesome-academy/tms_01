@@ -10,7 +10,7 @@
               <input type="hidden" id="course-id" value="<%= @course.id %>">
             </h1>
             <p class="card-text">
-              <%= @course.description %>
+              <%= truncate(@course.description, length: Settings.limit_description) %>
             </p>
           </div>
         </div>

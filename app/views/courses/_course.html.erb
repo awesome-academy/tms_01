@@ -14,7 +14,7 @@
           <div class="d-flex flex-column">
             <div class="img-course img-height img-new"></div>
             <h1 class="card-title"><%= course.title %></h1>
-            <p class="card-text"><%= course.description %></p>
+            <p class="card-text"><%= truncate(course.description, length: Settings.limit_description) %></p>
           </div>
         </div>
       </div>
