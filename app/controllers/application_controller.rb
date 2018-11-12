@@ -31,4 +31,9 @@ class ApplicationController < ActionController::Base
   def load_tasks
     @tasks = @subject.tasks.latest
   end
+
+  def load_user_courses
+    @user = current_user
+    @user_courses = @user.user_courses.includes(:course)
+  end
 end
