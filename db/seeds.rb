@@ -45,3 +45,11 @@ end
 users.each do |user|
   UserCourse.create!(course_id: course.id, user_id: user.id)
 end
+
+subjects.each do |sub|
+  10.times do
+    title = Faker::Lorem.sentence
+    description = Faker::Lorem.paragraph(3)
+    Task.create!(title: title, description: description, subject_id: sub.id)
+  end
+end

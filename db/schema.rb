@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 2018_10_26_151535) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subject_id"], name: "index_tasks_on_subject_id"
     t.index ["title"], name: "index_tasks_on_title", unique: true
   end
 
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_151535) do
 
   add_foreign_key "course_subjects", "courses"
   add_foreign_key "course_subjects", "subjects"
+  add_foreign_key "tasks", "subjects"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
   add_foreign_key "user_subjects", "course_subjects"

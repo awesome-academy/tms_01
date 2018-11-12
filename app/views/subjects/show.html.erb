@@ -1,30 +1,48 @@
 <% provide(:title, @subject.title) %>
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h4 class="modal-title"><%= t ".subject" %></h4>
+<div class="row">
+  <div class="col-4">
+    <div class="thumbnail img-sub">
+      <%= image_tag("git.png", class: "img-thumbnail rounded float-left img-height", alt: t(".img_avatar")) %>
     </div>
-    <div class="body">
-      <div class="panel panel-success">
-        <div class="panel-heading">
-          <div class="row">
-            <div class="col-12 text-center">
-            </div>
-          </div>
-        </div>
-        <table class="table">
-          <tbody>
-            <tr>
-              <td><%= t "form.title_subject" %></td>
-              <td><%= @subject.title %></td>
-            </tr>
-            <tr>
-              <td><%= t "form.description_subject" %></td>
-              <td><%= @subject.description %></td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="descrtiption">
+      <h3><%= @subject.title %></h3>
+      <p><i><%= @subject.created_at %></i></p>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading">
       </div>
+      <div class="panel-body">
+        <p><%= @subject.title %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3 class="">     
+            <%= t ".tasks"%>
+              <%= link_to t(".add_task"), "#modal-task", data: {toggle: "modal"}, class: "btn btn-primary pull-right" %>
+          </h3>
+        </div>
+      </div>  
+        <div class="panel-body">
+        <div class="list_task">
+          <%= render partial: "tasks/task", collection: @tasks, as: :task %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-task">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h4 class="modal-title"><%= t ".task" %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <%= render "tasks/form" %>
     </div>
   </div>
 </div>
